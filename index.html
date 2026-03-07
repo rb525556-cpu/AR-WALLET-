@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARWallet</title>
+
+<style>
+
+body{
+margin:0;
+background:#f5f5f5;
+font-family:Arial;
+}
+
+.header{
+padding:15px;
+font-size:22px;
+font-weight:bold;
+color:#FFC107;
+background:white;
+}
+
+.wallet{
+background:#0c1c2c;
+color:white;
+margin:15px;
+padding:20px;
+border-radius:10px;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.popupbox{
+background:black;
+color:#FFD700;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.btn{
+background:#FFC107;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+.menu{
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+ARWallet
+</div>
+
+<div class="wallet">
+<h3>Total Assets</h3>
+<h1>2.00 ARB</h1>
+</div>
+
+<div class="popup" id="bonus">
+<div class="popupbox">
+
+<h2>VIP BONUS</h2>
+<h1>₹35,000</h1>
+
+<button class="btn" onclick="claim()">Claim</button>
+
+</div>
+</div>
+
+<div class="menu">
+
+<div>Home</div>
+<div>Order</div>
+<div>Rewards</div>
+<div>My</div>
+
+</div>
+
+<script>
+
+function claim(){
+
+let pin=prompt("Enter 4 digit PIN");
+
+if(pin=="1234"){
+
+alert("Bonus Claimed");
+
+document.getElementById("bonus").style.display="none";
+
+}
+else{
+
+alert("Wrong PIN");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

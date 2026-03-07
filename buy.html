@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy ARB</title>
+
+<style>
+
+body{
+background:#f5f5f5;
+font-family:Arial;
+margin:0;
+}
+
+.header{
+padding:15px;
+background:white;
+font-size:20px;
+font-weight:bold;
+color:#FFC107;
+}
+
+.card{
+background:white;
+margin:10px;
+padding:15px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.buybtn{
+background:#FFC107;
+border:none;
+padding:8px 18px;
+border-radius:6px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Buy ARB
+</div>
+
+<div id="packages"></div>
+
+<script>
+
+function generatePackages(){
+
+let container=document.getElementById("packages");
+
+container.innerHTML="";
+
+for(let i=0;i<6;i++){
+
+let amount=Math.floor(Math.random()*(50000-2000+1))+2000;
+
+let reward=(amount*0.06).toFixed(2);
+
+container.innerHTML+=`
+
+<div class="card">
+
+<div>
+
+<h3>₹${amount}</h3>
+
+<p>Reward +${reward}</p>
+
+</div>
+
+<button class="buybtn">Buy</button>
+
+</div>
+
+`;
+
+}
+
+}
+
+generatePackages();
+
+</script>
+
+</body>
+</html>

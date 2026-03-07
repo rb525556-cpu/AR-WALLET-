@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orders</title>
+
+<style>
+
+body{
+background:#f5f5f5;
+font-family:Arial;
+margin:0;
+}
+
+.header{
+background:white;
+padding:15px;
+font-size:20px;
+font-weight:bold;
+color:#FFC107;
+}
+
+.card{
+background:white;
+margin:10px;
+padding:15px;
+border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.buy{
+background:#FFC107;
+border:none;
+padding:6px 15px;
+border-radius:6px;
+font-weight:bold;
+}
+
+.status{
+float:right;
+color:green;
+font-weight:bold;
+}
+
+.amount{
+float:right;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Orders
+</div>
+
+<div id="orders"></div>
+
+<script>
+
+function generateOrders(){
+
+let container=document.getElementById("orders");
+
+container.innerHTML="";
+
+for(let i=0;i<5;i++){
+
+let amount=Math.floor(Math.random()*(50000-2000+1))+2000;
+
+let order="MR"+Date.now()+Math.floor(Math.random()*1000);
+
+container.innerHTML+=`
+
+<div class="card">
+
+<button class="buy">Buy</button>
+
+<span class="status">Completed</span>
+
+<p>Amount <span class="amount">₹${amount}</span></p>
+
+<p>UTR -----</p>
+
+<p>Time ${new Date().toLocaleString()}</p>
+
+<p>Order Number ${order}</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+generateOrders();
+
+</script>
+
+</body>
+</html>

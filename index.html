@@ -1,80 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ARWallet Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARWallet</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background:#f2f2f2;
+background:#f5f5f5;
 }
 
-.container{
-padding:20px;
-}
-
-.title{
-font-size:34px;
+.header{
+background:white;
+padding:15px;
+font-size:22px;
 font-weight:bold;
-margin-top:20px;
-}
-
-label{
-color:#555;
-font-size:14px;
-}
-
-.input-box{
-background:#eee;
-border-radius:10px;
-padding:12px;
-margin-top:8px;
-margin-bottom:20px;
-display:flex;
-align-items:center;
-}
-
-.input-box input{
-border:none;
-background:none;
-outline:none;
-flex:1;
-font-size:16px;
-}
-
-.login-btn{
-width:100%;
-padding:14px;
-background:#FFC107;
-border:none;
-border-radius:8px;
-font-size:18px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.help{
-width:100%;
-padding:14px;
-background:#ddd;
-border:none;
-border-radius:8px;
-font-size:16px;
-margin-top:10px;
-}
-
-.register{
-text-align:center;
-margin-top:20px;
-}
-
-.register span{
 color:#FFC107;
-font-weight:bold;
+}
+
+.wallet{
+background:#0c1c2c;
+color:white;
+margin:15px;
+padding:20px;
+border-radius:10px;
 }
 
 </style>
@@ -83,72 +34,22 @@ font-weight:bold;
 
 <body>
 
-<div class="container">
-
-<div style="text-align:right">🌐 English</div>
-
-<div class="title">
-Account Login
-</div>
-
-<label>Phone Number</label>
-
-<div class="input-box">
-
-<span style="margin-right:10px">🇮🇳 +91</span>
-
-<input type="text" id="phone" placeholder="Please enter your phone number">
-
-</div>
-
-<label>Password</label>
-
-<div class="input-box">
-
-<input type="password" id="pass" placeholder="Please enter your login password">
-
-</div>
-
-<div style="text-align:right;color:#FFC107;font-size:14px">
-Forgot Password?
-</div>
-
-<button class="login-btn" onclick="login()">
-Log In
-</button>
-
-<button class="help">
-Help Center
-</button>
-
-<div class="register">
-No Account? <span>Register Now »</span>
-</div>
-
-</div>
-
 <script>
 
-function login(){
-
-let phone=document.getElementById("phone").value;
-let pass=document.getElementById("pass").value;
-
-if(phone=="" || pass==""){
-
-alert("Enter phone and password");
-
-return;
-
-}
-
-localStorage.setItem("login","yes");
-
-window.location="index.html";
-
+if(localStorage.getItem("login")!="true"){
+window.location.href="login.html";
 }
 
 </script>
+
+<div class="header">
+ARWallet
+</div>
+
+<div class="wallet">
+<h3>Total Assets</h3>
+<h1>2.00 ARB</h1>
+</div>
 
 </body>
 </html>
